@@ -13,16 +13,20 @@ const ImageGalleryItem = ({ buttonVsible, pageValue, imageModalItem, clickTogleM
 	const [isInitialLoad, setIsInitialLoad] = useState(true); // додано новий стан
   
 	// Запит на отримання зображень з сервісу Pixabay при завантаженні компоненту або при зміні параметрів пошуку.
+	
 	useEffect(() => {
-		if (isInitialLoad) { // додана перевірка
-		  setIsInitialLoad(false);
-		  return;
-		}
-  
-	  const fetchImages = async () => {
-		setStatus('pending');
-  
-		try {
+		
+		const fetchImages = async () => {
+			if (isInitialLoad) { // додана перевірка
+			  setIsInitialLoad(false);
+			  return;
+			}
+			if (!imageValue || !pageValue) {
+				return;
+			  }
+			setStatus('pending');
+			
+			try {
 		  const resp = await fetchImage(imageValue, pageValue, 12);
 		  if (resp.ok) {
 			const data = await resp.json();
