@@ -11,7 +11,7 @@ window.addEventListener('keydown', handleKeyDown);
 return () => {
 window.removeEventListener('keydown', handleKeyDown);
 };
-}, []);
+});
 
 const handleKeyDown = (e) => {
 if (e.code === 'Escape') {
@@ -35,8 +35,8 @@ modalRoot
 
 Modal.propTypes = {
 onClose: PropTypes.func.isRequired,
-largeImageURL: PropTypes.string.isRequired,
-tags: PropTypes.string.isRequired,
+// largeImageURL: PropTypes.string.isRequired,
+// tags: PropTypes.string.isRequired,
 children: PropTypes.node.isRequired,
 };
 
