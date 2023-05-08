@@ -23,12 +23,12 @@ const ImageGalleryItem = ({ buttonVsible, pageValue, imageModalItem, clickTogleM
 		setStatus('pending');
   
 		try {
-		  const resp = await fetchImage(imageValue, pageValue, 3);
+		  const resp = await fetchImage(imageValue, pageValue, 12);
 		  if (resp.ok) {
 			const data = await resp.json();
 			setImageNameFetch(prevState => [...prevState, ...data.hits]);
 			setStatus('resolved');
-			if (data.total > 3) {
+			if (data.total > 12) {
 			  setButtonHiden(true)
 			} else {
 			  setButtonHiden(false)
@@ -42,7 +42,7 @@ const ImageGalleryItem = ({ buttonVsible, pageValue, imageModalItem, clickTogleM
 		}
 	  }
 	  fetchImages();
-	}, [imageValue, pageValue]) // додано нову залежність
+	}, [imageValue, pageValue, isInitialLoad]) // додано нову залежність
   
 
   // Викликаємо функцію для зміни стану кнопки перегляду додаткових зображень.
