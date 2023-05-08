@@ -1,0 +1,30 @@
+button {
+	/* display: block; */
+	text-align: center;
+	align-items: center;
+	background-color: #404243;
+	color: #fff;
+	padding: 10px 20px;
+	margin: auto;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+	border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  button:hover,
+  button:focus {
+	background-color: #74797a;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .wrapper-buton{
+	text-align: center;
+	margin-bottom: 30px;
+  }
+
+  .wrapper-load-more {
+	display: flex;
+	justify-content: center;
+  }
