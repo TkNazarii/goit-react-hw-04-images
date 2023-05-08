@@ -11,7 +11,7 @@ window.addEventListener('keydown', handleKeyDown);
 return () => {
 window.removeEventListener('keydown', handleKeyDown);
 };
-}, [handleKeyDown]);
+}, []);
 
 const handleKeyDown = (e) => {
 if (e.code === 'Escape') {

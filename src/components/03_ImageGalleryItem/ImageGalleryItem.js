@@ -14,10 +14,10 @@ const ImageGalleryItem = ({ buttonVsible, pageValue, imageModalItem, clickTogleM
   
 	// Запит на отримання зображень з сервісу Pixabay при завантаженні компоненту або при зміні параметрів пошуку.
 	useEffect(() => {
-	  if (isInitialLoad) { // додана перевірка
-		setIsInitialLoad(false);
-		return;
-	  }
+		if (isInitialLoad) { // додана перевірка
+		  setIsInitialLoad(false);
+		  return;
+		}
   
 	  const fetchImages = async () => {
 		setStatus('pending');
@@ -42,7 +42,7 @@ const ImageGalleryItem = ({ buttonVsible, pageValue, imageModalItem, clickTogleM
 		}
 	  }
 	  fetchImages();
-	}, [imageValue, pageValue]) // додано нову залежність
+	}, [imageValue, pageValue, isInitialLoad]) // додано нову залежність
   
 
   // Викликаємо функцію для зміни стану кнопки перегляду додаткових зображень.
