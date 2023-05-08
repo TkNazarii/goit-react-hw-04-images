@@ -42,7 +42,7 @@ const ImageGalleryItem = ({ buttonVsible, pageValue, imageModalItem, clickTogleM
 		}
 	  }
 	  fetchImages();
-	}, [imageValue, pageValue, isInitialLoad]) // додано нову залежність
+	}, [imageValue, pageValue]) // додано нову залежність
   
 
   // Викликаємо функцію для зміни стану кнопки перегляду додаткових зображень.
